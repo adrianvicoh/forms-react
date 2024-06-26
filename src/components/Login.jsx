@@ -9,31 +9,21 @@ function Login(props) {
     return (
         <>
             <Container>
-                <Row>
-                    <h1 className="text-center mt-5 mb-5">Login</h1>
-                </Row>
-                <Row className='justify-content-md-center'>
-                    <Col xl={6} lg={6}>
+                <Row className="justify-content-md-center">
+                    <Col xs lg="6">
                         <Form>
-                            <Form.Group as={Row} className="mb-3" controlId="name">
-                                <Form.Label column sm="2">
-                                    Nombre
-                                </Form.Label>
-                                <Col sm="9">
-                                    <Form.Control type="text" placeholder="Nombre" />
-                                </Col>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Nombre</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" />
                             </Form.Group>
-                            <Form.Group as={Row} className="mb-3" controlId="password">
-                                <Form.Label column sm="2">
-                                    Password
-                                </Form.Label>
-                                <Col sm="9">
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Col>
+
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" />
                             </Form.Group>
-                            <Row className='justify-content-md-center'>
-                                <Button as={Col} sm="3" type="submit" className="mb-3 mt-3" controlId="send">Enviar</Button>
-                            </Row>
+                            <Button variant="primary" type="submit">
+                                Submit
+                            </Button>
                         </Form>
                     </Col>
                 </Row>
