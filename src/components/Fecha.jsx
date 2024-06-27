@@ -1,19 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Container, Form, Row, Col} from "react-bootstrap";
+
+const diaSemana = ["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"]
 
 function Fecha() {
 
     const [date, setDate] = useState("");
 
     function handleInput(input) {
-        console.log(date)
-        console.log(typeof input.target.value)
-        setDate(input.target.value)
-        console.log(input.target.value)
-        console.log(date)
-        let dateObject = new Date(input.target.value)
-        console.log(dateObject)
+        let newDate = new Date(input.target.value)
+        setDate(newDate)
     }
+
+    function tiempoTranscurrido() {
+        let firstDate = new Date(date.getYear())
+        console.log(firstDate)
+    }
+
+    /*useEffect(()=>{
+
+        if(date){
+            let dateObject = new Date(date)
+            console.log(dateObject)
+            let dateObject2 = new Date(date)
+            console.log(dateObject2)
+        }
+
+    }, [date])*/
 
     return (
         <>
@@ -30,7 +43,9 @@ function Fecha() {
                 </Row>
                 <Row className="justify-content-center text-center">
                     <Col>
-                        <h1 className="m-5">{date}</h1>
+                        <h2 className="mt-5">{date.toString()}</h2>
+                        <h2>{diaSemana[date.getDay() - 1]}</h2>
+                        <h2>{tiempoTranscurrido()}</h2>
                     </Col>
                 </Row>
             </Container>
