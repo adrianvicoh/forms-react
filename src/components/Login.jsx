@@ -7,7 +7,7 @@ function Login(props) {
     const correctPassword = props.password_correcto;
 
     const [isNameVerified, setNameVerified] = useState(false);
-    const [isPasswordVerified, setPasswordVerified] = useState(false);
+    const [isPasswordVerified, setPasswordVerified] = useState(false);  
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
