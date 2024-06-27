@@ -20,7 +20,6 @@ function Login(props) {
     }
 
     function handleInput(input) {
-        console.log(input.target.value)
         if (input.target.name === "name") {
             setName(input.target.value);
         } else {
@@ -30,7 +29,7 @@ function Login(props) {
 
     function verificar() {
         input.preventDefault();
-        
+
         if (name === correctName) {
             setNameVerified(true)
         }
