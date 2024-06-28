@@ -8,26 +8,15 @@ function Fecha() {
     const [date, setDate] = useState(null);
 
     function handleInput(input) {
-        let newDate = new Date(input.target.value)
-        setDate(newDate)
+        setDate(new Date(input.target.value))
     }
 
     function tiempoTranscurrido() {
         console.log(date.getFullYear())
         let firstDate = new Date(date.getFullYear() + "")
         console.log(firstDate)
+        
     }
-
-    /*useEffect(()=>{
-
-        if(date){
-            let dateObject = new Date(date)
-            console.log(dateObject)
-            let dateObject2 = new Date(date)
-            console.log(dateObject2)
-        }
-
-    }, [date])*/
 
     return (
         <>
@@ -46,7 +35,7 @@ function Fecha() {
                     <Col>
                         <h2 className="mt-5">{date ? date.toString() : null}</h2>
                         <h2>{date ? diaSemana[date.getDay() - 1] : null}</h2>
-                        <h2></h2>
+                        <h2>{date ? tiempoTranscurrido() : null}</h2>
                     </Col>
                 </Row>
             </Container>
