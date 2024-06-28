@@ -5,7 +5,7 @@ const diaSemana = ["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte
 
 function Fecha() {
 
-    const [date, setDate] = useState("");
+    const [date, setDate] = useState(null);
 
     function handleInput(input) {
         let newDate = new Date(input.target.value)
@@ -13,7 +13,8 @@ function Fecha() {
     }
 
     function tiempoTranscurrido() {
-        let firstDate = new Date(date.getYear())
+        console.log(date.getFullYear())
+        let firstDate = new Date(date.getFullYear() + "")
         console.log(firstDate)
     }
 
@@ -43,9 +44,9 @@ function Fecha() {
                 </Row>
                 <Row className="justify-content-center text-center">
                     <Col>
-                        <h2 className="mt-5">{date.toString()}</h2>
-                        <h2>{diaSemana[date.getDay() - 1]}</h2>
-                        <h2>{tiempoTranscurrido()}</h2>
+                        <h2 className="mt-5">{date ? date.toString() : null}</h2>
+                        <h2>{date ? diaSemana[date.getDay() - 1] : null}</h2>
+                        <h2></h2>
                     </Col>
                 </Row>
             </Container>
